@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2018 [Andrés Moreno Rubio](https://www.linkedin.com/in/andr%C3%A9s-moreno-rubio-49ab1860/), [Enric Beltran Cano](https://www.linkedin.com/in/enric-beltran-cano-400264156/) and [Roger Forner Fabre](https://www.linkedin.com/in/rogerforner/)
+Copyright (c) 2018 [Andrés Moreno Rubio](https://www.linkedin.com/in/andr%C3%A9s-moreno-rubio-49ab1860/), [Enric Beltran Cano](https://www.linkedin.com/in/enric-beltran-cano-400264156/) and [Roger Forner Fabre](https://www.linkedin.com/in/rogerforner/).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
