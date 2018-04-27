@@ -2,16 +2,16 @@
 
 **Taula de continguts**
 
-- [Què és?](#qu-s)
+- [Què és?](#què-és)
 - [Qui?](#qui)
 - [Laravel 5.6](#laravel-56)
 	- [Descarregar](#descarregar)
-	- [Instal·lació](#installaci)
-	- [Configuració](#configuraci)
+	- [Instal·lació](#installació)
+	- [Configuració](#configuració)
 		- [.env](#env)
 		- [Key](#key)
 		- [Migracions (DB)](#migracions-db)
-		- [Enviament de correus electrònics](#enviament-de-correus-electrnics)
+		- [Enviament de correus electrònics](#enviament-de-correus-electrònics)
 	- [Assets](#assets)
 	- [Servidor](#servidor)
 
