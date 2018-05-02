@@ -1,0 +1,14 @@
+.underline-small{
+  color:danger;
+  position: relative;
+}
+
+.underline-small::after{
+  content: '';
+  height: 2px;
+  width: 25%;
+  background: #dc3545;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
