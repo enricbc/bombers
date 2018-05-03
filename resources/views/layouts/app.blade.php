@@ -24,7 +24,9 @@
     <div id="app" class="border-top border-danger">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel py-3 border-top border-danger">
             <div class="container">
+              <img src="/bombers/public/img/Bombers.png" width="90" height="30" class="d-inline-block align-top mr-2" alt="">
                 <a class="navbar-brand underline-small" href="{{ url('/') }}">
+
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

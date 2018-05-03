@@ -10426,6 +10426,18 @@ a.text-dark:focus {
   bottom: 0;
 }
 
+html {
+  height: 100% !important;
+}
+
+body {
+  height: 100% !important;
+}
+
+#app {
+  height: 100% !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
