@@ -15,6 +15,7 @@ class CreateContainerNamesTable extends Migration
     {
         Schema::create('container_names', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nom');
             $table->timestamps();
         });
     }

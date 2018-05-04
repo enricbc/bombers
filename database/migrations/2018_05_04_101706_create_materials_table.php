@@ -15,6 +15,11 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('referencia')->unique();
+            $table->string('nom');
+            $table->unsignedInteger('quantitat_prevista');
+            $table->unsignedInteger('quantitat');
+            $table->boolean('es_del_parc')->default(true);
             $table->timestamps();
         });
     }

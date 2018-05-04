@@ -15,7 +15,12 @@ class CreateRegionsTable extends Migration
     {
         Schema::create('regions', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('codi')->unique();
+            $table->string('nom');
             $table->timestamps();
+            // Foreign Keys.
+            $table->unsignedInteger('location_id')->nullable();
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('set null');
         });
     }
 

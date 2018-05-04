@@ -14,7 +14,10 @@ class AddFireStationDataToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // S'afegeix a la taula usuaris.
+            // Foreign Keys.
+            $table->unsignedInteger('region_id')->nullable();
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('set null');
         });
     }
 
