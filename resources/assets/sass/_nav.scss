@@ -13,14 +13,17 @@
   bottom: 0;
 }
 
-html{
-  height: 100% !important;
+html,
+body {
+  height:100% !important;
 }
 
-body{
-  height: 100% !important;
+// Fem que el contingut del cos ocupi el 100% de la pantalla per tal de dur al
+// fons el peu de pàgina (footer).
+// En l'operació es resta l'altura del Navbar i la del Footer.
+#app {
+  min-height: 100% !important;
 }
-
-#app{
-  height: 100% !important;
+main,#altura {
+  min-height: calc(100vh - 74px);
 }

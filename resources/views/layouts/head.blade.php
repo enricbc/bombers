@@ -21,14 +21,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="border-top border-danger h-100">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel py-3 border-top border-danger">
-          <div class="container">
-
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-
+    <div id="app" class="border-top border-danger">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel py-3 border-top border-danger d-none d-sm-block">
+        <span class=""><br></span>
+          <div class="container d-sm-none">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <!-- Left Side Of Navbar -->
                   <ul class="navbar-nav mr-auto">
@@ -63,7 +59,7 @@
           </div>
         </nav>
 
-        <main class="h-100">
+        <main class="">
             @yield('content')
         </main>
     </div>
