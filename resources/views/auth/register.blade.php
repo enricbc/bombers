@@ -26,10 +26,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Codi parc') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="text" type="integer" class="form-control{{ $errors->has('codi_parc') ? ' is-invalid' : '' }}" name="codi_parc" value="{{ old('codi_parc') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">

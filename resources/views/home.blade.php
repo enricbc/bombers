@@ -9,6 +9,23 @@
       <nav aria-label="breadcrumb bg-transparent">
         <ol class="breadcrumb bg-transparent">
           <li class="breadcrumb-item active underline-small text-uppercase" aria-current="page">{{ Auth::user()->name }}</li>
+          <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  <span><br></span>
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              </div>
+          </li>
         </ol>
       </nav>
       <div class="row ">
