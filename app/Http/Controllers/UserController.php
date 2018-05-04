@@ -53,7 +53,7 @@ class UserController extends Controller
           'name'     => $data['name'],
           'password' => bcrypt($data['password']) // Encriptat.
       ]);
-      dd('Hola');
+
       return redirect()->route('home');
     }
 

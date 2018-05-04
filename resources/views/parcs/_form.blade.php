@@ -42,7 +42,7 @@
             <form class="" action="{{action('UserController@edit')}}" method="post">
 
           @else
-            <form class="" action="{{action('UserController@store')}}" method="post">
+            {{ Form::open(array('action' => 'UserController@store')) }}
           @endif
             {{-- Name --}}
             <div class="form-group">
