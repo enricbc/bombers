@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +27,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //Passem un usuari buid a la pagina de creacio de Parcs
+        $user=new User;
+        return view('parcs._form')->with(['user'=>$user]);
     }
 
     /**
@@ -34,7 +40,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      // Validar dades obtingudes del formulari.
+      $data = $request->validate([
+          'codi_parc' => 'required',
+          'name'      => 'required|string|max:255',
+          'password'  => 'required|string|min:6|confirmed',
+      ]);
+
+      // Crear l'usuari (la validació ha sortit bé).
+      User::create([
+        'codi_parc' => $data['codi_parc'],
+          'name'     => $data['name'],
+          'password' => bcrypt($data['password']) // Encriptat.
+      ]);
+      dd('Hola');
+      return redirect()->route('home');
     }
 
     /**

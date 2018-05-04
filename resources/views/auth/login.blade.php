@@ -17,7 +17,7 @@
                             <div class="col-md-6">
                               <input id="identity" type="identity" class="form-control" name="identity" value="{{ old('identity') }}" autofocus>
                               @if ($errors->has('identity'))
-                                <span class="help-block">
+                                <span class="invalid-feedback">
                                   <strong>{{ $errors->first('identity') }}</strong>
                                 </span>
                               @endif
