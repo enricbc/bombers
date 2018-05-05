@@ -28,6 +28,17 @@
       <div class="col pr-0 mt-2">
         <!-- Split dropright button -->
         <div class="btn-group-vertical dropright btn-block">
+          <div class="btn-group dropright" role="group">
+            <button type="button" class="btn btn-secondary btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <p class="underline-small text-left">Backups</p>
+            </button>
+            <!-- Dropdown menu links -->
+            <div class="dropdown-menu">
+              <h6 class="dropdown-header">Copies de seguretat</h6>
+              <a class="dropdown-item" href="#">Afegir veichles</a>
+              <a class="dropdown-item" href="{!! route('backup') !!}">Consultar veichles</a>
+            </div>
+          </div>
           <div class="btn-group  dropright" role="group">
             <button type="button" class="btn btn-secondary btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <p class="underline-small text-left">Parcs</p>

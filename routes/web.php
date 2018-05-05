@@ -25,3 +25,9 @@ Route::resource('location', 'LocationController');
 Route::resource('material', 'MaterialController');
 Route::resource('region', 'RegionController');
 Route::resource('vehicle', 'VehicleController');
+
+// Backup routes
+Route::get('backup', 'BackupController@index')->name('backup');
+Route::get('backup/create', 'BackupController@create')->name('bcreate');
+Route::get('backup/download/{file_name}', 'BackupController@download');
+Route::get('backup/delete/{file_name}', 'BackupController@delete');

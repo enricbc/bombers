@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -124,6 +124,8 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+
+        Jenssegers\Date\DateServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -175,7 +177,8 @@ return [
     */
 
     'aliases' => [
-
+        'SomeClass' => App\Helpers\SomeClass::class,
+        'Date' => Jenssegers\Date\Date::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'App' => Illuminate\Support\Facades\App::class,

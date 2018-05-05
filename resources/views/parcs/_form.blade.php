@@ -12,7 +12,12 @@
           <ol class="breadcrumb bg-transparent">
             <li class="breadcrumb-item" aria-current="page">Home</li>
             <li class="breadcrumb-item" aria-current="page">Parcs</li>
-            <li class="breadcrumb-item active" aria-current="page">Crear</li>
+            @if ($user->exists)
+              <li class="breadcrumb-item active" aria-current="page">Editar</li>
+            @else
+              <li class="breadcrumb-item active" aria-current="page">Crear</li>
+            @endif
+
           </ol>
         </nav>
       </div>
@@ -39,8 +44,7 @@
           @endif
 
           @if ($user->exists)
-            <form class="" action="{{action('UserController@edit')}}" method="post">
-
+            {{Form::open(['url' => "users/$user->id",'method'=>'put'])}}
           @else
             {{ Form::open(array('action' => 'UserController@store')) }}
           @endif
@@ -53,7 +57,7 @@
             {{-- Email --}}
             <div class="form-group">
               <label for="userEmail">Codi del parc</label>
-              <input type="integer" name="codi_parc" value="{{ $user->email or old('codi_parc') }}" class="form-control" id="userEmail" aria-describedby="emailHelp" required>
+              <input type="integer" name="codi_parc" value="{{ $user->codi_parc or old('codi_parc') }}" class="form-control" id="userEmail" aria-describedby="emailHelp" required>
               <small id="emailHelp" class="form-text text-muted">Codi del nou parc.</small>
             </div>
             {{-- Password --}}

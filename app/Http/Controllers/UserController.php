@@ -17,7 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+      $users = User::get();
+
+      return view('parcs.index', ['users' => $users]);
     }
 
     /**
@@ -65,7 +67,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -76,7 +78,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+      // Obtenir l'usuari.
+      $user= User::findOrFail($id);
+
+      return view('parcs._form', ['user' => $user]);
     }
 
     /**

@@ -52,6 +52,13 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'dump' => [
+        		   'dump_binary_path' => 'G:\laragon\bin\mysql\mysql-5.7.19-winx64\bin', // only the path, so without `mysqldump` or `pg_dump`
+        		   'use_single_transaction',
+        		   'timeout' => 60 * 5, // 5 minute timeout
+        		   'exclude_tables' => ['table1', 'table2'],
+        		   //'add_extra_option' => '--optionname=optionvalue',
+        		],
         ],
 
         'pgsql' => [
