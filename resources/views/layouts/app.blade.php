@@ -29,7 +29,7 @@
 
                     {{ config('app.name', 'Laravel') }}
                 </a>
-              
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -64,7 +64,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class=""id="altura">
             @yield('content')
         </main>
     </div>
