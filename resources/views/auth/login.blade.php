@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                          <label for="identity" class="col-md-4 control-label">{{ __('Usuari') }}</label>
+                          <label for="identity" class="col-md-4 col-form-label text-md-right">{{ __('Usuari') }}</label>
 
                             <div class="col-md-6">
                               <input id="identity" type="identity" class="form-control" name="identity" value="{{ old('identity') }}" autofocus>
