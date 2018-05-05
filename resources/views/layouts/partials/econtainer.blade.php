@@ -31,13 +31,13 @@
           <div class="btn-group dropright" role="group">
 
             <button type="button" class="btn btn-secondary btn-lg "  onclick="backup('{!! route('backup') !!}');">
-              <p class="underline-small text-left">Backups</p>
+              <p class="underline-small text-left"><i class="fas fa-lock"></i> Backups</p>
             </button>
 
           </div>
           <div class="btn-group  dropright" role="group">
             <button type="button" class="btn btn-secondary btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p class="underline-small text-left">Parcs</p>
+              <p class="underline-small text-left"><i class="fas fa-warehouse"></i> Parcs</p>
             </button>
               <!-- Dropdown menu links -->
               <div class="dropdown-menu">
@@ -48,7 +48,7 @@
             </div>
             <div class="btn-group dropright" role="group">
               <button type="button" class="btn btn-secondary btn-lg " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <p class="underline-small text-left">Veichles</p>
+                <p class="underline-small text-left"><i class="fas fa-truck-moving"></i> Veichles</p>
               </button>
               <!-- Dropdown menu links -->
               <div class="dropdown-menu">
@@ -60,5 +60,5 @@
           </div>
       </div>
     </div>
-    
+
 </div>
