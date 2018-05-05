@@ -17,8 +17,8 @@
         <hr class="my-0 d-none d-sm-block">
         <div class="row">
             <div class="col-xs-12 col-2 my-3 clearfix">
-                <a id="create-new-backup-button" href="{{ route('bcreate') }}" class="btn btn-primary">
-                  <i class="fas fa-archive"></i> Create New Backup
+                <a id="create-new-backup-button" href="{{ route('bcreate') }}" class="btn btn-danger bg-dark">
+                  <p class="my-0 underline-small"><i class="fas fa-archive"></i> Nova copia de seguretat</p>
                 </a>
             </div>
         </div>
@@ -29,10 +29,10 @@
                       <table class="table table-striped table-bordered">
                           <thead>
                           <tr>
-                              <th>File</th>
-                              <th>Size</th>
-                              <th>Date</th>
-                              <th>Age</th>
+                              <th>Arxiu</th>
+                              <th>Tamany</th>
+                              <th>Data</th>
+                              <th>Temps</th>
                               <th></th>
                           </tr>
                           </thead>
@@ -64,7 +64,7 @@
                       </table>
                   @else
                       <div class="well">
-                          <h4>There are no backups</h4>
+                          <h4>No hi han copies de seguretat</h4>
                       </div>
                   @endif
               </div>
