@@ -12,6 +12,39 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'matricula',
+        'matricula_data',
+        'matricula_tercera',
+        'km',
+        'km_data',
+        'manteniment_data',
+        'proper_manteniment_km',
+        'proper_manteniment_data',
+        'hores_bomba',
+        'num_xasis',
+        'itv_vigor',
+        'itv_propera',
+        'marca_model',
+        'motor_potencia',
+        'eslora',
+        'baixa_prevista',
+        'donat_de_baixa',
+        'asseg_num_polissa',
+        'asseg_tipus',
+        'places',
+        'roda_dimensio',
+        'roda_cadenes',
+        'vehicle_type_id',
+        'vehicle_owner_id',
+        'vehicle_insurer_id'
+    ];
+
+    /**
      * Eloquent: Relationships.
      **************************************************************************/
     /**
