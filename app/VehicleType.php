@@ -2,20 +2,20 @@
 
 namespace App;
 
-use App\Region;
+use App\Vehicle;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class VehicleType extends Model
 {
     /**
      * Eloquent: Relationships.
      **************************************************************************/
     /**
-     * Region.
-     * Get the region of the location.
+     * Vehicles.
+     * Get the vehicles of the type.
      */
-    public function region()
+    public function vehicles()
     {
-        return $this->belongsTo(Region::class)->withDefault();
+        return $this->hasMany(Vehicle::class);
     }
 }
