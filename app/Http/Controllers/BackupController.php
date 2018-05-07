@@ -7,6 +7,10 @@ use Log;
 use Storage;
 class BackupController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function index()
    {
        $disk = Storage::disk(config('laravel-backup.backup.destination.disks')[0]);
