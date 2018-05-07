@@ -11,6 +11,19 @@ use Illuminate\Database\Eloquent\Model;
 class Container extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'pare_id',
+        'fire_station_id', // user_id
+        'vehicle_id',
+        'container_name_id',
+        'material_id'
+    ];
+
+    /**
      * Eloquent: Relationships.
      **************************************************************************/
     /**

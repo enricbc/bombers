@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class VehicleOwner extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['nom', 'telefon'. 'final_renting'];
+
+    /**
      * Eloquent: Relationships.
      **************************************************************************/
     /**
