@@ -124,7 +124,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
@@ -177,6 +177,8 @@ return [
     */
 
     'aliases' => [
+
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'SomeClass' => App\Helpers\SomeClass::class,
         'Date' => Jenssegers\Date\Date::class,
         'Form' => Collective\Html\FormFacade::class,

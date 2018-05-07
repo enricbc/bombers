@@ -21,9 +21,9 @@
           </ol>
         </nav>
       </div>
-      <hr class="my-0 d-none d-sm-block">
+      <hr class="mt-0 d-none d-sm-block pb-4">
       <!--Formulari-->
-      <div class="card shadow-2">
+      <div class="card shadow-2 mt-5">
         <div class="card-body">
           @if ($user->exists)
             <h5 class="card-title">Editar parc</h5>

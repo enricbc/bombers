@@ -19,7 +19,7 @@
         </nav>
       </div>
       <hr class="my-0 d-none d-sm-block">
-
+      {!! QrCode::size(600)->generate(route('user.index')); !!}
     </div>
     <!--Fi Contenedor central-->
     <!--Contenedor dret-->
