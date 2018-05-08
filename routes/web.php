@@ -27,7 +27,7 @@ Route::resource('location', 'LocationController');
 Route::resource('material', 'MaterialController');
 Route::resource('region', 'RegionController');
 Route::resource('vehicle', 'VehicleController');
-
+Route::get('user/delete/{id}', 'UserController@destroy');
 // Backup routes
 Route::get('backup', 'BackupController@index')->name('backup');
 Route::get('backup/create', 'BackupController@create')->name('bcreate');

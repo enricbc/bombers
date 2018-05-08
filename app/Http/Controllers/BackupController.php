@@ -33,6 +33,7 @@ class BackupController extends Controller
        }
        // reverse the backups, so the newest one would be on top
        $backups = array_reverse($backups);
+
        return view("backups.backups")->with(compact('backups'));
    }
 
@@ -47,12 +48,11 @@ class BackupController extends Controller
             //Artisan::call('backup:run');
             $output = Artisan::output();
             // return the results as a response to the ajax call
-
-            return redirect()->back();
+            $missatge=session()->flash('success', 'S\'ha generat una nova copia de seguretat.');
+            return redirect()->back()->with($missatge);
         } catch (Exception $e) {
-            Flash::error($e->getMessage());
-            dd('fail');
-            return redirect()->back();
+            $missatge=session()->flash('warning', 'No s\'ha pogut generat una nova copia de seguretat.');
+            return redirect()->back()->with($missatge);
         }
     }
     /**
@@ -86,9 +86,11 @@ class BackupController extends Controller
         $disk = Storage::disk(config('laravel-backup.backup.destination.disks')[0]);
         if ($disk->exists('copia-seguretat/' . $file_name)) {
             $disk->delete('copia-seguretat/' . $file_name);
-            return redirect()->back();
+            $missatge=session()->flash('success', 'S\'ha eliminat la copia de seguretat '.$file_name.'');
+            return redirect()->back()->with($missatge);
         } else {
-            abort(404, "The backup file doesn't exist.");
+          $missatge=session()->flash('warning', 'No existeix la copia de seguretat '.$file_name.'');
+          return redirect()->back()->with($missatge);
         }
     }
 }

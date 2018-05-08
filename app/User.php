@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'codi_parc', 'password',
+        'name', 'codi_parc', 'password', 'region_id'
     ];
 
     /**
@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected function region(){
+      return $this->belongsTo('App\Region','region_id','id','regions');
+    }
 }

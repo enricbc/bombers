@@ -16,6 +16,30 @@
         </div>
         <hr class="my-0 d-none d-sm-block">
         <div class="row">
+          <div class="col-12 mt-3">
+            {{-- Warning --}}
+          @if (session('warning'))
+            <div class="alert alert-warning alert-dismissible fade show">
+              {{ session('warning') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
+
+          {{-- Success --}}
+          @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show">
+              {{ session('success') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
+          </div>
+        </div>
+        <div class="row">
+
             <div class="col-xs-12 col-2 my-3 clearfix">
                 <a id="create-new-backup-button" href="{{ route('bcreate') }}" class="btn btn-danger bg-dark">
                   <p class="my-0 underline-small"><i class="fas fa-archive"></i> Nova copia de seguretat</p>
@@ -56,7 +80,7 @@
                                        </a>
                                       <a class="btn btn-xs btn-danger" data-button-type="delete"
                                          href="{{ url('backup/delete/'.$backup['file_name']) }}"><i class="fas fa-times"></i>
-                                          Delete</a>
+                                          Eliminar</a>
                                   </td>
                               </tr>
                           @endforeach

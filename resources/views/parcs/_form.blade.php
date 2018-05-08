@@ -8,6 +8,29 @@
     <!--Contenedor central-->
     <div class="col-8 py-4" id="altura">
       <div class="row d-none d-sm-block">
+        <div class="row">
+          <div class="col-12 mt-3">
+            {{-- Warning --}}
+          @if (session('warning'))
+            <div class="alert alert-warning alert-dismissible fade show">
+              {{ session('warning') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
+
+          {{-- Success --}}
+          @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show">
+              {{ session('success') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          @endif
+          </div>
+        </div>
         <nav aria-label="breadcrumb bg-transparent">
           <ol class="breadcrumb bg-transparent">
             <li class="breadcrumb-item" aria-current="page">Home</li>
@@ -44,7 +67,7 @@
           @endif
 
           @if ($user->exists)
-            {{Form::open(['url' => "users/$user->id",'method'=>'put'])}}
+            {{Form::open(['route' => ['user.update',$user->id], 'method' => 'PUT'])}}
           @else
             {{ Form::open(array('action' => 'UserController@store')) }}
           @endif
@@ -60,15 +83,36 @@
               <input type="integer" name="codi_parc" value="{{ $user->codi_parc or old('codi_parc') }}" class="form-control" id="userEmail" aria-describedby="emailHelp" required>
               <small id="emailHelp" class="form-text text-muted">Codi del nou parc.</small>
             </div>
+            {{-- Regio --}}
+            <div class="form-group">
+              <label for="userRegion">Regió</label>
+                <select name="region_id"class="custom-select" id="inputGroupSelect01">
+                  <option selected disabled>Selecciona una regió</option>
+                  @forelse ($regions as $regio)
+                    <option value="{{$regio['id']}}">{{$regio['nom']}}</option>
+                  @empty
+
+                  @endforelse
+                </select>
+              <small id="regiolHelp" class="form-text text-muted">Regió on es troba el nou parc.</small>
+            </div>
             {{-- Password --}}
             <div class="form-group">
               <label for="userPassword">Contrasenya</label>
-              <input type="password" name="password" class="form-control" id="userPassword" aria-describedby="passwordHelp" required>
+              @if ($user->exists)
+                <input type="password" name="password" class="form-control" id="userPassword" aria-describedby="passwordHelp">
+              @else
+                <input type="password" name="password" class="form-control" id="userPassword" aria-describedby="passwordHelp" required>
+              @endif
               <small id="passwordHelp" class="form-text text-muted">La contrasenya ha de contindre al menys 6 caracters.</small>
             </div>
             <div class="form-group">
               <label for="userPasswordConf">Repeteix la contrasenya</label>
-              <input type="password" name="password_confirmation" class="form-control" id="userPasswordConf" aria-describedby="passwordConfHelp" required>
+              @if ($user->exists)
+                <input type="password" name="password_confirmation" class="form-control" id="userPasswordConf" aria-describedby="passwordConfHelp">
+              @else
+                <input type="password" name="password_confirmation" class="form-control" id="userPasswordConf" aria-describedby="passwordConfHelp" required>
+              @endif
               <small id="passwordConfHelp" class="form-text text-muted">Torna a entrar la contrasenya sense errors.</small>
             </div>
             {{-- Crear --}}
