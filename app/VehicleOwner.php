@@ -2,27 +2,27 @@
 
 namespace App;
 
-use App\Region;
+use App\Vehicle;
 use Illuminate\Database\Eloquent\Model;
 
-class Location extends Model
+class VehicleOwner extends Model
 {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['codi', 'nom'];
+    protected $fillable = ['nom', 'telefon'. 'final_renting'];
 
     /**
      * Eloquent: Relationships.
      **************************************************************************/
     /**
-     * Region.
-     * Get the region of the location.
+     * Vehicles.
+     * Get the vehicles of the owner.
      */
-    public function region()
+    public function vehicles()
     {
-        return $this->belongsTo(Region::class)->withDefault();
+        return $this->hasMany(Vehicle::class);
     }
 }
